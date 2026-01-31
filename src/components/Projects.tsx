@@ -31,7 +31,7 @@ const Projects = () => {
       featured: true
     },
     {
-      title: "PDF Processing & RAG Explorer",
+      title: "PDF Processing and RAG Explorer",
       description: "Intelligent document processing system combining PyMuPDF for extraction and RAG (Retrieval-Augmented Generation) for context-aware Q&A. Features metadata analysis and LLM integration.",
       image: ragImage,
       technologies: ["Python", "PyMuPDF", "RAG", "LLMs", "NLP"],
