@@ -104,6 +104,20 @@ const Projects = () => {
       skills: ["Azure", "Machine Learning", "Cloud"]
     },
     {
+      title: "Google Project Management Specialization",
+      issuer: "Coursera",
+      date: "June 2025",
+      link: "https://www.coursera.org/account/accomplishments/specialization/DZ7S9MTKC2DV",
+      skills: ["Project Management", "Agile", "Scrum", "Strategic Planning"]
+    },
+    {
+      title: "Computer Vision in Microsoft Azure",
+      issuer: "Coursera",
+      date: "July 2025",
+      link: "https://www.coursera.org/account/accomplishments/verify/CHDO1P0CVUZ6",
+      skills: ["Computer Vision", "Azure", "AI"]
+    },
+    {
       title: "Foundations of Project Management",
       issuer: "Coursera",
       date: "June 2025",
