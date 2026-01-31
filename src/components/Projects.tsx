@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Award } from "lucide-react";
 import aiMlBg from "@/assets/ai-ml-bg.jpg";
 import developmentBg from "@/assets/development-bg.jpg";
 
@@ -80,6 +80,44 @@ const Projects = () => {
 
   const featuredProjects = projects.filter(project => project.featured);
   const otherProjects = projects.filter(project => !project.featured);
+
+  const certificates = [
+    {
+      title: "Introduction to Retrieval Augmented Generation (RAG)",
+      issuer: "Coursera",
+      date: "July 2025",
+      link: "https://www.coursera.org/account/accomplishments/verify/4GU01IR35M1B",
+      skills: ["RAG", "LLMs", "Generative AI"]
+    },
+    {
+      title: "Microsoft Azure AI Fundamentals AI-900 Specialization",
+      issuer: "Coursera",
+      date: "July 2025",
+      link: "https://www.coursera.org/account/accomplishments/specialization/4ZLWBXMKY0O2",
+      skills: ["Azure AI", "Computer Vision", "NLP"]
+    },
+    {
+      title: "Microsoft Azure Machine Learning",
+      issuer: "Coursera",
+      date: "July 2025",
+      link: "https://www.coursera.org/account/accomplishments/verify/J1TC2SZ9FU2D",
+      skills: ["Azure", "Machine Learning", "Cloud"]
+    },
+    {
+      title: "Foundations of Project Management",
+      issuer: "Coursera",
+      date: "June 2025",
+      link: "https://www.coursera.org/account/accomplishments/verify/XCQE99VUB0VF",
+      skills: ["Project Management", "Planning"]
+    },
+    {
+      title: "Speed Up Data Analysis and Presentation Building",
+      issuer: "Coursera",
+      date: "June 2025",
+      link: "https://www.coursera.org/account/accomplishments/verify/CQFJJTCUB2YL",
+      skills: ["Data Analysis", "Presentation"]
+    }
+  ];
 
   return (
     <section id="projects" className="py-20 lg:py-32">
@@ -192,6 +230,53 @@ const Projects = () => {
                           {tech}
                         </Badge>
                       ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Certificates Section */}
+          <div className="space-y-8 animate-fade-in">
+            <h3 className="text-2xl font-semibold text-center mt-8">Certifications & Awards</h3>
+            <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-8"></div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {certificates.map((cert, index) => (
+                <Card key={index} className="bg-card/30 border-primary/20 hover:border-primary/50 hover:bg-card/50 transition-all duration-300 group relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Award className="w-16 h-16 text-primary" />
+                  </div>
+                  
+                  <CardContent className="p-6 relative z-10 h-full flex flex-col">
+                    <div className="mb-4">
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+                        <Award className="w-5 h-5 text-primary" />
+                      </div>
+                      <h4 className="font-semibold text-lg leading-tight group-hover:text-primary transition-colors">
+                        <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                          {cert.title}
+                        </a>
+                      </h4>
+                      <p className="text-sm text-muted-foreground mt-1">{cert.issuer}</p>
+                    </div>
+                    
+                    <div className="mt-auto space-y-4">
+                      <div className="flex flex-wrap gap-1.5">
+                        {cert.skills.map((skill, i) => (
+                          <span key={i} className="text-[10px] px-2 py-0.5 rounded-full bg-secondary text-secondary-foreground border border-border">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <div className="flex items-center justify-between text-xs text-muted-foreground pt-3 border-t border-border/50">
+                        <span>{cert.date}</span>
+                        <a href={cert.link} target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors">
+                          Verify <ExternalLink className="w-3 h-3 ml-1" />
+                        </a>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>

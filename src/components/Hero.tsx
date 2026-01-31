@@ -92,7 +92,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl scale-110 opacity-70"></div>
             
             {/* Main image container */}
-            <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+            <div className="relative w-64 h-64 lg:w-80 lg:h-80">
               {/* Frosted glass backdrop */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-full border border-white/10 shadow-2xl"></div>
               
@@ -243,6 +243,36 @@ const Hero = () => {
                     )}
                   </div>
                 </div>
+
+                {/* Seventh Orbit - Lightning Interaction */}
+                <div className="absolute inset-[-25px] rounded-full" style={{ animation: burstBalls.includes(7) ? 'none' : 'orbit7 7s linear infinite' }}>
+                  <div 
+                    onClick={() => handleBallClick(7)}
+                    className={`absolute top-1/2 left-0 w-2.5 h-2.5 bg-primary rounded-full shadow-[0_0_10px_hsl(var(--primary))] transform -translate-x-1/2 -translate-y-1/2 collision-ball cursor-pointer transition-all duration-300 hover:scale-125 ${
+                      burstBalls.includes(7) ? 'animate-clickBurst' : ''
+                    }`}
+                  >
+                    <div className="absolute inset-0 bg-white/60 rounded-full animate-ping delay-75"></div>
+                    {burstBalls.includes(7) && (
+                      <div className="absolute inset-0 bg-primary rounded-full animate-explosionBurst" />
+                    )}
+                  </div>
+                </div>
+
+                {/* Eighth Orbit - Electrical Arc */}
+                <div className="absolute inset-[-55px] rounded-full" style={{ animation: burstBalls.includes(8) ? 'none' : 'orbit8 11s linear infinite reverse' }}>
+                  <div 
+                    onClick={() => handleBallClick(8)}
+                    className={`absolute bottom-0 right-1/2 w-3 h-3 bg-secondary border border-primary/50 rounded-full shadow-[0_0_8px_hsl(var(--primary))] transform translate-x-1/2 translate-y-1/2 collision-ball cursor-pointer transition-all duration-300 hover:scale-125 ${
+                      burstBalls.includes(8) ? 'animate-clickBurst' : ''
+                    }`}
+                  >
+                    <div className="absolute inset-0 bg-primary/40 rounded-full animate-ping delay-300"></div>
+                     {burstBalls.includes(8) && (
+                      <div className="absolute inset-0 bg-secondary rounded-full animate-explosionBurst" />
+                    )}
+                  </div>
+                </div>
               </div>
               
               {/* Image */}
@@ -250,7 +280,7 @@ const Hero = () => {
                 <img 
                   src={profileImage} 
                   alt="Ahsan Raza - Software Engineer" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10" />
               </div>
@@ -361,7 +391,51 @@ const Hero = () => {
           }
           91% { 
             transform: rotate(328deg) scale(0.1);
-            opacity: 0;
+         
+
+        @keyframes orbit7 {
+          0% { transform: rotate(0deg); }
+          40% { transform: rotate(144deg); }
+          /* Electric collision */
+          45% { 
+            transform: rotate(162deg) scale(3);
+            filter: drop-shadow(0 0 20px hsl(var(--primary))) brightness(10);
+            background-color: white;
+          }
+          48% { 
+            transform: rotate(172deg) scale(0.2);
+            opacity: 0.5;
+          }
+          55% { 
+            transform: rotate(198deg) scale(1);
+            opacity: 1;
+            filter: drop-shadow(0 0 10px hsl(var(--primary))) brightness(1);
+            background-color: hsl(var(--primary));
+          }
+          100% { transform: rotate(360deg); }
+        }
+
+        @keyframes orbit8 {
+          0% { transform: rotate(0deg); }
+          60% { transform: rotate(-216deg); }
+          /* Electric collision */
+          65% { 
+            transform: rotate(-234deg) scale(2.5);
+            filter: drop-shadow(0 0 15px white) brightness(8);
+            background-color: white;
+          }
+          68% { 
+            transform: rotate(-245deg) scale(0.2);
+            opacity: 0.5;
+          }
+          75% { 
+            transform: rotate(-270deg) scale(1);
+            opacity: 1;
+            filter: drop-shadow(0 0 8px hsl(var(--secondary))) brightness(1);
+            background-color: hsl(var(--secondary));
+          }
+          100% { transform: rotate(-360deg); }
+        }   opacity: 0;
           }
           95% { 
             transform: rotate(342deg) scale(1);
