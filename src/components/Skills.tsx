@@ -187,7 +187,7 @@ const Skills = () => {
                       <p className="text-foreground font-medium group-hover/item:text-primary transition-colors duration-300">
                         Academic Excellence
                       </p>
-                      <p className="text-sm text-muted-foreground">GPA: 3.8/4.0 at GCU Faisalabad</p>
+                      <p className="text-sm text-muted-foreground">GPA: 3.25/4.0 at GCU Faisalabad</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3 group/item">
