@@ -8,6 +8,7 @@ import advocaid from "@/assets/advocaid.png";
 import inclusivePlay from "@/assets/inclusive-play.png";
 import ragImage from "@/assets/Rag.png";
 import delightYourMind from "@/assets/delight-your-mind.png";
+import legalAi from "@/assets/legalai.PNG";
 
 const Projects = () => {
   const projects = [
@@ -65,13 +66,12 @@ const Projects = () => {
       featured: false
     },
     {
-      title: "Real-time Chat Application",
-      description: "Full-featured chat application with real-time messaging, file sharing, emoji reactions, and group chat functionality. Built with modern web technologies.",
-      image: developmentBg,
-      technologies: ["React.js", "Socket.io", "Node.js", "MongoDB", "JWT", "File Upload"],
-      github: "https://github.com/ahsanraza",
-      live: "https://chat-app.vercel.app",
-      featured: false
+      title: "Legal AI Assistant (Android)",
+      description: "AI-powered Android app providing instant, simplified legal answers via text or voice. Built with Jetpack Compose and Google Gemini AI to bridge the gap in legal accessibility.",
+      image: legalAi,
+      technologies: ["Android", "Kotlin", "Jetpack Compose", "Gemini AI", "Firebase", "Room DB"],
+      github: "",
+      featured: true
     },
     {
       title: "Weather Analytics Dashboard",
