@@ -6,8 +6,8 @@ import aiMlBg from "@/assets/ai-ml-bg.jpg";
 import developmentBg from "@/assets/development-bg.jpg";
 import advocaid from "@/assets/advocaid.png";
 import inclusivePlay from "@/assets/inclusive-play.png";
-import ragImage from "@/assets/Rag.PNG";
-import delightYourMind from "@/assets/delight-your-mind.PNG";
+import ragImage from "@/assets/Rag.png";
+import delightYourMind from "@/assets/delight-your-mind.png";
 
 const Projects = () => {
   const projects = [
@@ -169,7 +169,7 @@ const Projects = () => {
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-64 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-auto aspect-video lg:aspect-auto lg:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors duration-300" />
                   </div>
