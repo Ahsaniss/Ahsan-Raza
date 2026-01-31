@@ -8,21 +8,21 @@ import developmentBg from "@/assets/development-bg.jpg";
 const Projects = () => {
   const projects = [
     {
-      title: "AI Chatbot with Gemini AI",
-      description: "Advanced conversational AI chatbot built using Google's Gemini AI. Features natural language processing, context awareness, and multi-turn conversations. Integrated with web applications to provide intelligent customer support.",
+      title: "Advocaid - AI Legal Assistant",
+      description: "Bilingual AI-powered legal assistant for Pakistani law. Answers queries from Constitution, PPC, and CPC in English and Urdu. Features category-based guidance and mobile-responsive design.",
       image: aiMlBg,
-      technologies: ["Gemini AI", "Node.js", "React.js", "WebSocket", "Natural Language Processing"],
-      github: "https://github.com/ahsanraza",
-      live: "https://chatbot-demo.vercel.app",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Gemini AI", "shadcn/ui"],
+      github: "https://lnkd.in/dJKTuaku",
+      live: "https://advocaidai.vercel.app/",
       featured: true
     },
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with modern UI/UX, payment integration, inventory management, and admin dashboard. Built with MERN stack and optimized for performance and scalability.",
+      title: "Inclusive Play — Gaming Without Barriers",
+      description: "Fully accessible shape and color matching game powered by voice commands, screen reader support, and multi-input controls. Built in 48 hours with teammate Katheeja Fathima.",
       image: developmentBg,
-      technologies: ["React.js", "Node.js", "MongoDB", "Stripe", "Redux", "Express.js"],
-      github: "https://github.com/ahsanraza",
-      live: "https://ecommerce-demo.vercel.app",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Web Speech API", "shadcn/ui"],
+      github: "",
+      live: "https://playful-access-adventures.vercel.app/",
       featured: true
     },
     {
@@ -194,13 +194,19 @@ const Projects = () => {
                   </div>
 
                   <div className={`flex gap-4 ${index % 2 === 1 ? 'lg:justify-end' : ''}`}>
-                    <Button variant="ghost" size="icon" className="hover:text-primary">
-                      <Github className="h-5 w-5" />
-                    </Button>
+                    {project.github && (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Button variant="ghost" size="icon" className="hover:text-primary">
+                          <Github className="h-5 w-5" />
+                        </Button>
+                      </a>
+                    )}
                     {project.live && (
-                      <Button variant="ghost" size="icon" className="hover:text-primary">
-                        <ExternalLink className="h-5 w-5" />
-                      </Button>
+                      <a href={project.live} target="_blank" rel="noopener noreferrer">
+                        <Button variant="ghost" size="icon" className="hover:text-primary">
+                          <ExternalLink className="h-5 w-5" />
+                        </Button>
+                      </a>
                     )}
                   </div>
                 </div>
@@ -221,13 +227,19 @@ const Projects = () => {
                         <ExternalLink className="h-6 w-6 text-primary" />
                       </div>
                       <div className="flex gap-2">
-                        <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-primary">
-                          <Github className="h-4 w-4" />
-                        </Button>
+                        {project.github && (
+                          <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-primary">
+                              <Github className="h-4 w-4" />
+                            </Button>
+                          </a>
+                        )}
                         {project.live && (
-                          <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-primary">
-                            <ExternalLink className="h-4 w-4" />
-                          </Button>
+                          <a href={project.live} target="_blank" rel="noopener noreferrer">
+                            <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-primary">
+                              <ExternalLink className="h-4 w-4" />
+                            </Button>
+                          </a>
                         )}
                       </div>
                     </div>
