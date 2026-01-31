@@ -4,13 +4,17 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Award } from "lucide-react";
 import aiMlBg from "@/assets/ai-ml-bg.jpg";
 import developmentBg from "@/assets/development-bg.jpg";
+import advocaid from "@/assets/advocaid.png";
+import inclusivePlay from "@/assets/inclusive-play.png";
+import ragImage from "@/assets/Rag.PNG";
+import delightYourMind from "@/assets/delight-your-mind.PNG";
 
 const Projects = () => {
   const projects = [
     {
       title: "Advocaid - AI Legal Assistant",
       description: "Bilingual AI-powered legal assistant for Pakistani law. Answers queries from Constitution, PPC, and CPC in English and Urdu. Features category-based guidance and mobile-responsive design.",
-      image: aiMlBg,
+      image: advocaid,
       technologies: ["React", "TypeScript", "Tailwind CSS", "Gemini AI", "shadcn/ui"],
       github: "https://lnkd.in/dJKTuaku",
       live: "https://advocaidai.vercel.app/",
@@ -19,28 +23,29 @@ const Projects = () => {
     {
       title: "Inclusive Play — Gaming Without Barriers",
       description: "Fully accessible shape and color matching game powered by voice commands, screen reader support, and multi-input controls. Built in 48 hours with teammate Katheeja Fathima.",
-      image: developmentBg,
+      image: inclusivePlay,
       technologies: ["React", "TypeScript", "Tailwind CSS", "Web Speech API", "shadcn/ui"],
       github: "",
       live: "https://playful-access-adventures.vercel.app/",
       featured: true
     },
     {
-      title: "Machine Learning Data Analysis Tool",
-      description: "Python-based data analysis and visualization tool with machine learning capabilities. Features automated data preprocessing, multiple ML algorithms, and interactive dashboards.",
-      image: aiMlBg,
-      technologies: ["Python", "Pandas", "Scikit-learn", "Matplotlib", "Streamlit", "NumPy"],
-      github: "https://github.com/ahsanraza",
-      featured: false
+      title: "PDF Processing & RAG Explorer",
+      description: "Intelligent document processing system combining PyMuPDF for extraction and RAG (Retrieval-Augmented Generation) for context-aware Q&A. Features metadata analysis and LLM integration.",
+      image: ragImage,
+      technologies: ["Python", "PyMuPDF", "RAG", "LLMs", "NLP"],
+      github: "",
+      live: "https://colab.research.google.com/drive/1hLB5vJA9sjgA7_lDsGV1vfjrElHYfU4F?usp=sharing",
+      featured: true
     },
     {
-      title: "React Native Mobile App",
-      description: "Cross-platform mobile application for task management and productivity. Features offline functionality, push notifications, and seamless synchronization across devices.",
-      image: developmentBg,
-      technologies: ["React Native", "Firebase", "Redux", "AsyncStorage", "Push Notifications"],
-      github: "https://github.com/ahsanraza",
-      live: "https://play.google.com/store",
-      featured: false
+      title: "Delight Your Mind",
+      description: "AI-powered mental wellness platform offering personalized therapy bots and emotional support. Features a calm, accessible design to help users navigate emotional states.",
+      image: delightYourMind,
+      technologies: ["Generative AI", "Bootstrap", "JavaScript", "HTML/CSS"],
+      github: "",
+      live: "https://delight-your-mind.vercel.app/",
+      featured: true
     },
     {
       title: "Project Management Dashboard",
