@@ -13,6 +13,14 @@ import legalAi from "@/assets/legalai.PNG";
 const Projects = () => {
   const projects = [
     {
+      title: "Legal AI Assistant (Android)",
+      description: "AI-powered Android app providing instant, simplified legal answers via text or voice. Built with Jetpack Compose and Google Gemini AI to bridge the gap in legal accessibility.",
+      image: legalAi,
+      technologies: ["Android", "Kotlin", "Jetpack Compose", "Gemini AI", "Firebase", "Room DB"],
+      github: "",
+      featured: true
+    },
+    {
       title: "Advocaid - AI Legal Assistant",
       description: "Bilingual AI-powered legal assistant for Pakistani law. Answers queries from Constitution, PPC, and CPC in English and Urdu. Features category-based guidance and mobile-responsive design.",
       image: advocaid,
@@ -64,14 +72,6 @@ const Projects = () => {
       technologies: ["Python", "Machine Learning", "GitHub API", "FastAPI", "Docker", "CI/CD"],
       github: "https://github.com/ahsanraza",
       featured: false
-    },
-    {
-      title: "Legal AI Assistant (Android)",
-      description: "AI-powered Android app providing instant, simplified legal answers via text or voice. Built with Jetpack Compose and Google Gemini AI to bridge the gap in legal accessibility.",
-      image: legalAi,
-      technologies: ["Android", "Kotlin", "Jetpack Compose", "Gemini AI", "Firebase", "Room DB"],
-      github: "",
-      featured: true
     },
     {
       title: "Weather Analytics Dashboard",
