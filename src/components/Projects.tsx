@@ -6,8 +6,8 @@ import aiMlBg from "@/assets/ai-ml-bg.jpg";
 import developmentBg from "@/assets/development-bg.jpg";
 import advocaid from "@/assets/advocaid.png";
 import inclusivePlay from "@/assets/inclusive-play.png";
-import ragImage from "@/assets/Rag.png";
-import delightYourMind from "@/assets/delight-your-mind.png";
+import ragImage from "@/assets/Rag.PNG";
+import delightYourMind from "@/assets/delight-your-mind.PNG";
 import legalAi from "@/assets/legalai.PNG";
 
 const Projects = () => {
