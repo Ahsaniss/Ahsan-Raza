@@ -118,6 +118,13 @@ const Projects = () => {
       skills: ["Computer Vision", "Azure", "AI"]
     },
     {
+      title: "Artificial Intelligence on Microsoft Azure",
+      issuer: "Coursera",
+      date: "July 2025",
+      link: "https://www.coursera.org/account/accomplishments/verify/HIL5PN59Y256",
+      skills: ["Azure", "Artificial Intelligence", "Cloud"]
+    },
+    {
       title: "Foundations of Project Management",
       issuer: "Coursera",
       date: "June 2025",
