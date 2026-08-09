@@ -1,10 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import profileImage from "@/assets/profile-image.png";
+import htmlLogo from "@/assets/w3_html5-ar21~bgwhite.svg";
+import pythonLogo from "@/assets/python-icon.svg";
+import javascriptLogo from "@/assets/javascript-ar21.svg";
+import gitLogo from "@/assets/git-scm-ar21~bgwhite.svg";
+import viteLogo from "@/assets/vitejsdev-ar21~bgwhite.svg";
 import { useState } from "react";
 
 const Hero = () => {
   const [burstBalls, setBurstBalls] = useState<number[]>([]);
+  const orbitLogos = [
+    { id: 9, src: htmlLogo, alt: "HTML logo" },
+    { id: 10, src: pythonLogo, alt: "Python logo" },
+    { id: 11, src: javascriptLogo, alt: "JavaScript logo" },
+    { id: 12, src: gitLogo, alt: "Git logo" },
+    { id: 13, src: viteLogo, alt: "Vite logo" },
+  ];
 
   const handleBallClick = (ballId: number) => {
     setBurstBalls(prev => [...prev, ballId]);
@@ -273,6 +285,29 @@ const Hero = () => {
                     )}
                   </div>
                 </div>
+
+                {/* Outer Logo Orbit Ring */}
+                <div className="absolute inset-[-110px] rounded-full pointer-events-none" style={{ animation: 'orbit9 24s linear infinite' }}>
+                  {orbitLogos.map((logo, index) => {
+                    const positions = [
+                      "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2",
+                      "absolute top-1/4 right-0 translate-x-1/2 -translate-y-1/2",
+                      "absolute bottom-1/4 left-0 -translate-x-1/2 translate-y-1/2",
+                      "absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2",
+                      "absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2",
+                    ];
+
+                    return (
+                      <div
+                        key={logo.id}
+                        className={`${positions[index]} w-7 h-7 rounded-full bg-background/80 border border-primary/35 shadow-lg flex items-center justify-center overflow-hidden`}
+                        style={{ animation: `orbit${index + 9} ${18 + index * 2}s linear infinite ${index % 2 === 0 ? "" : "reverse"}` }}
+                      >
+                        <img src={logo.src} alt={logo.alt} className="h-[78%] w-[78%] object-contain" />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
               
               {/* Image */}
@@ -443,6 +478,31 @@ const Hero = () => {
             filter: contrast(1) brightness(1);
           }
           100% { transform: rotate(360deg); }
+        }
+
+        @keyframes orbit9 {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        @keyframes orbit10 {
+          0% { transform: rotate(72deg); }
+          100% { transform: rotate(432deg); }
+        }
+
+        @keyframes orbit11 {
+          0% { transform: rotate(144deg); }
+          100% { transform: rotate(504deg); }
+        }
+
+        @keyframes orbit12 {
+          0% { transform: rotate(216deg); }
+          100% { transform: rotate(576deg); }
+        }
+
+        @keyframes orbit13 {
+          0% { transform: rotate(288deg); }
+          100% { transform: rotate(648deg); }
         }
 
         @keyframes orbitElliptical {
