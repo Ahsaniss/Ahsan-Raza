@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import MovingDotsDivider from "@/components/MovingDotsDivider";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
@@ -41,6 +42,7 @@ const Index = () => {
         <Navigation />
         <main>
           <Hero />
+          <MovingDotsDivider />
           <About />
           <Experience />
           <Projects />
