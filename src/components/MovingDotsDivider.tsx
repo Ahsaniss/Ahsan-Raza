@@ -156,6 +156,10 @@ const MotionLogo = ({
 
 const MovingDotsDivider = () => {
   const isMobile = useIsMobile();
+  if (isMobile) {
+    return null;
+  }
+
   const activeLogos = isMobile ? logos.slice(0, 5) : logos;
   const iconSize = isMobile ? 28 : 40;
   const iconPadding = isMobile ? 14 : 20;
