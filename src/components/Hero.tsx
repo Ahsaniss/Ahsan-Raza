@@ -56,7 +56,7 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-4">
               <Button variant="hero" size="lg" className="group" asChild>
-                <a href="https://drive.google.com/file/d/1_yIro5EoMEQRYQK6_nf1FuU0WeSo5CcR/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <a href="https://drive.google.com/file/d/1nJOd_S8dhl5eTeCNGMjMuciCUSisun1m/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                   Download Resume
                   <ArrowDown className="ml-2 group-hover:translate-y-1 transition-transform" />
                 </a>
