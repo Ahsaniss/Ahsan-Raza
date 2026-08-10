@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import captureLogo from "@/assets/Capture.PNG";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,8 +32,12 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 border-2 border-primary rounded flex items-center justify-center">
-              <span className="text-primary font-bold text-sm sm:text-lg">AR</span>
+            <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded border border-primary/30 bg-background/80 shadow-sm sm:h-12 sm:w-12">
+              <img
+                src={captureLogo}
+                alt="Ahsan Raza logo"
+                className="h-full w-full object-contain p-1"
+              />
             </div>
           </div>
 
