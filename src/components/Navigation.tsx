@@ -32,11 +32,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded border border-primary/30 bg-background/80 shadow-sm sm:h-12 sm:w-12">
+            <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded bg-transparent sm:h-12 sm:w-12">
               <img
                 src={captureLogo}
                 alt="Ahsan Raza logo"
-                className="h-full w-full object-contain p-1"
+                className="h-full w-full object-contain"
               />
             </div>
           </div>
