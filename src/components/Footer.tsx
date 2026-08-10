@@ -1,5 +1,6 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import captureLogo from "@/assets/Capture.PNG";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,8 +12,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 border-2 border-primary rounded flex items-center justify-center">
-                <span className="text-primary font-bold text-lg">AR</span>
+              <div className="w-10 h-10 flex-shrink-0">
+                <img src={captureLogo} alt="Ahsan Raza logo" className="h-full w-full object-contain" />
               </div>
               <div>
                 <h3 className="text-lg font-bold text-foreground">Ahsan Raza</h3>
