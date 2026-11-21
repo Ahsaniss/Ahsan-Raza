@@ -172,3 +172,16 @@ section h2 > span.text-primary:first-child {
   background: hsl(var(--ink)); color: hsl(var(--background)) !important;
   border-radius: 0.4em; transform: rotate(-3deg); font-size: 0.7em; vertical-align: 0.12em;
 }
+
+/* Mobile: number pill on its own line, roomier heading so nothing touches */
+@media (max-width: 640px) {
+  section h2 { line-height: 1.12; }
+  section h2 > span.text-primary:first-child {
+    display: block;
+    width: fit-content;
+    margin: 0 0 0.5rem 0;
+    padding: 0.05em 0.45em;
+    font-size: 0.55em;
+    vertical-align: baseline;
+  }
+}
