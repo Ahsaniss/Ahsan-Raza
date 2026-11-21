@@ -52,52 +52,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 lg:py-32 bg-secondary/20 relative overflow-hidden">
-      {/* Animated Ribbon Top Border */}
-      <div className="absolute top-0 left-0 w-full h-2 overflow-hidden">
-        {/* Main Ribbon */}
-        <div 
-          className="absolute top-0 h-2 bg-primary"
-          style={{
-            width: '200%',
-            animation: 'ribbonFlow 8s ease-in-out infinite'
-          }}
-        />
-        
-        {/* Ribbon Shimmer Effect */}
-        <div 
-          className="absolute top-0 h-2 w-32 bg-gradient-to-r from-transparent via-white/40 to-transparent"
-          style={{
-            animation: 'ribbonShimmer 3s ease-in-out infinite'
-          }}
-        />
-        
-        {/* Ribbon Particles */}
-        <div className="absolute top-0 w-full h-2">
-          <div 
-            className="absolute w-1 h-1 bg-primary/60 rounded-full"
-            style={{
-              top: '2px',
-              animation: 'ribbonParticle1 4s ease-in-out infinite'
-            }}
-          />
-          <div 
-            className="absolute w-1.5 h-1.5 bg-primary/40 rounded-full"
-            style={{
-              top: '1px',
-              animation: 'ribbonParticle2 5s ease-in-out infinite 1s'
-            }}
-          />
-          <div 
-            className="absolute w-1 h-1 bg-primary/50 rounded-full"
-            style={{
-              top: '3px',
-              animation: 'ribbonParticle3 6s ease-in-out infinite 2s'
-            }}
-          />
-        </div>
-      </div>
-
+    <section id="skills" className="py-20 lg:py-32 relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="space-y-16">
           {/* Section Header */}
@@ -135,7 +90,7 @@ const Skills = () => {
                       <Badge 
                         key={skillIndex}
                         variant="secondary"
-                        className="text-xs bg-primary/5 text-primary border-primary/20 hover:bg-primary/15 hover:scale-105 transition-all duration-300 font-medium px-3 py-1"
+                        className="text-xs px-3 py-1"
                       >
                         {skill}
                       </Badge>
@@ -187,7 +142,7 @@ const Skills = () => {
                       <p className="text-foreground font-medium group-hover/item:text-primary transition-colors duration-300">
                         Academic Excellence
                       </p>
-                      <p className="text-sm text-muted-foreground">GPA: 3.25/4.0 at GCU Faisalabad</p>
+                      <p className="text-sm text-muted-foreground">GPA: 3.31/4.0 at GCU Faisalabad</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3 group/item">
@@ -202,16 +157,16 @@ const Skills = () => {
                   <div className="flex items-start space-x-3 group/item">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 group-hover/item:scale-125 group-hover/item:bg-primary/80 transition-all duration-300" />
                     <div>
-                      <p className="text-foreground font-medium group-hover:item:text-primary transition-colors duration-300">
+                      <p className="text-foreground font-medium group-hover/item:text-primary transition-colors duration-300">
                         Student Placement
                       </p>
                       <p className="text-sm text-muted-foreground">95% student placement rate as trainer</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3 group/item">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 group-hover:item:scale-125 group-hover:item:bg-primary/80 transition-all duration-300" />
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 group-hover/item:scale-125 group-hover/item:bg-primary/80 transition-all duration-300" />
                     <div>
-                      <p className="text-foreground font-medium group-hover:item:text-primary transition-colors duration-300">
+                      <p className="text-foreground font-medium group-hover/item:text-primary transition-colors duration-300">
                         Project Success
                       </p>
                       <p className="text-sm text-muted-foreground">15+ successful projects delivered</p>
@@ -224,105 +179,6 @@ const Skills = () => {
         </div>
       </div>
 
-      {/* Ribbon Animation Styles */}
-      <style>{`
-        @keyframes ribbonFlow {
-          0% {
-            transform: translateX(-100%);
-            opacity: 0.3;
-          }
-          20% {
-            opacity: 1;
-          }
-          80% {
-            opacity: 1;
-          }
-          100% {
-            transform: translateX(0%);
-            opacity: 0.3;
-          }
-        }
-
-        @keyframes ribbonShimmer {
-          0% {
-            left: -128px;
-            opacity: 0;
-          }
-          20% {
-            opacity: 1;
-          }
-          80% {
-            opacity: 1;
-          }
-          100% {
-            left: 100%;
-            opacity: 0;
-          }
-        }
-
-        @keyframes ribbonParticle1 {
-          0% {
-            left: -10px;
-            opacity: 0;
-            transform: scale(0);
-          }
-          20% {
-            opacity: 1;
-            transform: scale(1);
-          }
-          80% {
-            opacity: 1;
-            transform: scale(1);
-          }
-          100% {
-            left: calc(100% + 10px);
-            opacity: 0;
-            transform: scale(0);
-          }
-        }
-
-        @keyframes ribbonParticle2 {
-          0% {
-            left: -15px;
-            opacity: 0;
-            transform: scale(0) rotate(0deg);
-          }
-          25% {
-            opacity: 1;
-            transform: scale(1) rotate(180deg);
-          }
-          75% {
-            opacity: 1;
-            transform: scale(1) rotate(360deg);
-          }
-          100% {
-            left: calc(100% + 15px);
-            opacity: 0;
-            transform: scale(0) rotate(540deg);
-          }
-        }
-
-        @keyframes ribbonParticle3 {
-          0% {
-            left: -8px;
-            opacity: 0;
-            transform: scale(0) translateY(0);
-          }
-          30% {
-            opacity: 1;
-            transform: scale(1) translateY(-2px);
-          }
-          70% {
-            opacity: 1;
-            transform: scale(1) translateY(2px);
-          }
-          100% {
-            left: calc(100% + 8px);
-            opacity: 0;
-            transform: scale(0) translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
 };

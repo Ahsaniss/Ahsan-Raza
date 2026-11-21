@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import captureLogo from "@/assets/Capture.PNG";
 
+const RESUME_URL =
+  "https://drive.google.com/file/d/1nJOd_S8dhl5eTeCNGMjMuciCUSisun1m/view?usp=sharing";
+
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -25,14 +28,14 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? "bg-background/90 backdrop-blur-lg shadow-subtle" : "bg-transparent"
-    }`}>
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+    <nav className="fixed top-4 inset-x-0 z-50 px-4">
+      <div className={`mx-auto max-w-5xl rounded-full border-2 border-foreground bg-card px-5 transition-shadow duration-300 ${
+        scrolled ? "shadow-glow" : ""
+      }`}>
+        <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded bg-transparent sm:h-12 sm:w-12">
+            <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full">
               <img
                 src={captureLogo}
                 alt="Ahsan Raza logo"
@@ -42,18 +45,18 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium"
+                className="relative text-foreground/70 hover:text-foreground transition-colors duration-300 text-sm font-bold after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.label}
               </a>
             ))}
-            <Button variant="outline" size="sm" className="ml-4">
-              Resume
+            <Button variant="default" size="sm" className="ml-2" asChild>
+              <a href={RESUME_URL} target="_blank" rel="noopener noreferrer">Resume</a>
             </Button>
           </div>
 
@@ -70,7 +73,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-lg border-t border-border">
+          <div className="lg:hidden absolute top-full left-4 right-4 mt-3 rounded-3xl bg-card border-2 border-foreground shadow-glow">
             <div className="px-6 py-6 space-y-4">
               {navItems.map((item) => (
                 <a
@@ -82,8 +85,8 @@ const Navigation = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="outline" className="w-full mt-4">
-                Resume
+              <Button variant="outline" className="w-full mt-4" asChild>
+                <a href={RESUME_URL} target="_blank" rel="noopener noreferrer">Resume</a>
               </Button>
             </div>
           </div>

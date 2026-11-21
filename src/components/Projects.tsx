@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Award } from "lucide-react";
+import Reveal from "@/components/Reveal";
 import aiMlBg from "@/assets/ai-ml-bg.jpg";
 import developmentBg from "@/assets/development-bg.jpg";
 import advocaid from "@/assets/advocaid.png";
@@ -160,18 +161,30 @@ const Projects = () => {
           {/* Featured Projects */}
           <div className="space-y-20">
             {featuredProjects.map((project, index) => (
-              <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
+              <Reveal key={index}>
+              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
                 index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
               }`}>
                 {/* Project Image */}
                 <div className={`relative group ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                  <div className="relative overflow-hidden rounded-lg shadow-subtle hover:shadow-glow transition-all duration-300">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-auto aspect-video lg:aspect-auto lg:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors duration-300" />
+                  <span className="absolute -top-6 -left-2 z-10 text-7xl font-black text-primary/25 select-none">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className="relative overflow-hidden rounded-xl border-2 border-foreground bg-card shadow-glow group-hover:shadow-[8px_8px_0_hsl(var(--primary))] group-hover:[transform:perspective(1000px)_rotateX(2deg)_rotateY(-3deg)_scale(1.02)] transition-all duration-500">
+                    {/* Browser chrome */}
+                    <div className="flex items-center gap-1.5 px-4 py-2.5 bg-[hsl(var(--butter))] border-b-2 border-foreground">
+                      <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
+                    </div>
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-auto aspect-video lg:aspect-auto lg:h-72 object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-primary/10 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-500" />
+                    </div>
                   </div>
                 </div>
 
@@ -216,6 +229,7 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
+              </Reveal>
             ))}
           </div>
 
@@ -225,7 +239,8 @@ const Projects = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherProjects.map((project, index) => (
-                <Card key={index} className="bg-card/50 border-border/50 hover:bg-card/70 hover:-translate-y-2 transition-all duration-300 group">
+                <Reveal key={index} delay={index * 120} className="h-full">
+                <Card className="h-full bg-card/50 border-border/50 hover:bg-card/70 transition-all duration-300 group">
                   <CardContent className="p-6 space-y-4">
                     <div className="flex justify-between items-start">
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -271,6 +286,7 @@ const Projects = () => {
                     </div>
                   </CardContent>
                 </Card>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -282,7 +298,8 @@ const Projects = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {certificates.map((cert, index) => (
-                <Card key={index} className="bg-card/30 border-primary/20 hover:border-primary/50 hover:bg-card/50 transition-all duration-300 group relative overflow-hidden">
+                <Reveal key={index} delay={(index % 4) * 100} className="h-full">
+                <Card className="h-full bg-card/30 border-primary/20 hover:border-primary/50 hover:bg-card/50 transition-all duration-300 group relative overflow-hidden">
                   <div className="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
                     <Award className="w-16 h-16 text-primary" />
                   </div>
@@ -318,6 +335,7 @@ const Projects = () => {
                     </div>
                   </CardContent>
                 </Card>
+                </Reveal>
               ))}
             </div>
           </div>

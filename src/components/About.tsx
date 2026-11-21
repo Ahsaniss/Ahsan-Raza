@@ -58,14 +58,15 @@ const About = () => {
             
             <Card className="bg-card/50 border-border/50 hover:bg-card/70 transition-all duration-300">
               <CardContent className="p-6">
-                <div className="grid grid-cols-2 gap-3">
+                <div className="flex flex-wrap gap-2">
                   {technologies.map((tech, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-primary rounded-full" />
-                      <span className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                        {tech}
-                      </span>
-                    </div>
+                    <span
+                      key={index}
+                      className="rounded-full border-2 border-foreground px-3 py-1 text-sm font-bold transition-transform hover:-translate-y-1 hover:rotate-2"
+                      style={{ background: `hsl(var(--${["lilac","butter","mint","sky","peach"][index % 5]}))` }}
+                    >
+                      {tech}
+                    </span>
                   ))}
                 </div>
               </CardContent>

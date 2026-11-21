@@ -8,6 +8,8 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Effects from "@/components/Effects";
+import Reveal from "@/components/Reveal";
 
 const Index = () => {
   return (
@@ -35,21 +37,22 @@ const Index = () => {
         <meta name="twitter:description" content="Building the future with AI and cutting-edge web technologies" />
         
         {/* Theme Color */}
-        <meta name="theme-color" content="#6366f1" />
+        <meta name="theme-color" content="#8b5cf6" />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background relative">
+        <Effects />
         <Navigation />
-        <main>
+        <main className="relative z-10">
           <Hero />
           <MovingDotsDivider />
-          <About />
-          <Experience />
-          <Projects />
-          <Skills />
-          <Contact />
+          <Reveal><About /></Reveal>
+          <Reveal><Experience /></Reveal>
+          <Reveal><Projects /></Reveal>
+          <Reveal><Skills /></Reveal>
+          <Reveal><Contact /></Reveal>
         </main>
-        <Footer />
+        <div className="relative z-10"><Footer /></div>
       </div>
     </>
   );
