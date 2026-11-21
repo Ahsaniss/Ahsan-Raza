@@ -22,7 +22,7 @@ const Reveal = ({ children, delay = 0, className = "", as: Tag = "div" }: Reveal
           observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
