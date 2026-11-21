@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { CoderCartoon, Star } from "@/components/Doodles";
 
 const About = () => {
   const technologies = [
@@ -49,6 +50,12 @@ const About = () => {
                 particularly in the field of <span className="text-primary">Generative AI</span> and 
                 <span className="text-primary"> Machine Learning</span>.
               </p>
+            </div>
+
+            <div className="relative mt-4 rounded-3xl border-2 border-foreground bg-[hsl(var(--sky))] p-4 shadow-glow">
+              <Star className="sticker-float absolute -right-3 -top-4 h-9 w-9" />
+              <CoderCartoon className="mx-auto w-full max-w-sm" />
+              <p className="text-center text-sm font-bold">Me, 3 coffees deep, shipping features ☕</p>
             </div>
           </div>
 

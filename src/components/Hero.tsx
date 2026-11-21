@@ -6,6 +6,8 @@ import pythonLogo from "@/assets/python-icon.svg";
 import javascriptLogo from "@/assets/javascript-ar21.svg";
 import gitLogo from "@/assets/git-scm-ar21~bgwhite.svg";
 import { useEffect, useState } from "react";
+import { Star, Squiggle, Sparkle } from "@/components/Doodles";
+import { confetti } from "@/lib/confetti";
 
 const ROLES = [
   "Software Engineer",
@@ -63,6 +65,10 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16">
+      <Star className="sticker-float absolute left-[4%] top-32 hidden h-10 w-10 md:block" style={{ ["--r" as string]: "-10deg" }} />
+      <Sparkle className="sticker-float absolute left-[46%] top-28 hidden h-9 w-9 md:block" style={{ animationDelay: "1s" }} />
+      <Squiggle className="absolute bottom-20 left-[6%] hidden h-6 w-28 md:block" />
+      <Star className="sticker-float absolute bottom-28 right-[6%] hidden h-8 w-8 md:block" style={{ animationDelay: "1.5s" }} />
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-16 items-center">
           {/* Text */}
@@ -129,7 +135,10 @@ const Hero = () => {
           {/* Portrait */}
           <div className="hero-in relative mx-auto w-full max-w-sm" style={{ animationDelay: "0.35s" }}>
             <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-t-[999px] rounded-b-3xl border-2 border-foreground bg-primary" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-3xl border-2 border-foreground bg-[hsl(var(--lilac))]">
+            <div
+              onClick={(e) => confetti(e.clientX, e.clientY, 60)}
+              className="relative aspect-[4/5] cursor-pointer overflow-hidden rounded-t-[999px] rounded-b-3xl border-2 border-foreground bg-[hsl(var(--lilac))]"
+            >
               <img
                 src={profileImage}
                 alt="Ahsan Raza - Software Engineer"
@@ -146,6 +155,13 @@ const Hero = () => {
                 <img src={s.src} alt={s.alt} className="h-8 w-8 object-contain" />
               </div>
             ))}
+
+            {/* Cartoon speech bubble */}
+            <div className="sticker-float absolute -top-8 right-2 z-10 rounded-2xl border-2 border-foreground bg-card px-4 py-2 text-lg font-extrabold shadow-glow" style={{ ["--r" as string]: "4deg", transform: "rotate(4deg)" }}>
+              Hello! 👋
+              <span className="absolute -bottom-[9px] left-6 h-4 w-4 rotate-45 border-b-2 border-r-2 border-foreground bg-card" />
+            </div>
+            <p className="absolute -right-2 top-[46%] hidden rotate-6 text-sm font-bold text-primary lg:block">click me! ↩</p>
 
             <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border-2 border-foreground bg-[hsl(var(--butter))] px-5 py-2 text-sm font-bold shadow-glow">
               CGPA 3.31 · 15+ projects shipped

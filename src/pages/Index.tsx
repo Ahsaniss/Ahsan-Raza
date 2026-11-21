@@ -9,6 +9,7 @@ import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Effects from "@/components/Effects";
+import Mascot from "@/components/Mascot";
 import Reveal from "@/components/Reveal";
 
 const Index = () => {
@@ -42,6 +43,7 @@ const Index = () => {
 
       <div className="min-h-screen bg-background relative">
         <Effects />
+        <Mascot />
         <Navigation />
         <main className="relative z-10">
           <Hero />
